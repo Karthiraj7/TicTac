@@ -1,10 +1,69 @@
-# k-arthi
+TicTac
 
 ## Summary
 
-Short summary on functionality and used technologies.
+Summary: Integrating SweetAlert in React Tic-Tac-Toe Game
 
-[picture of the solution in action, if possible]
+1. Installation and Import:
+
+Install SweetAlert using npm:
+bash
+Copy code
+npm install sweetalert2
+Import SweetAlert and its CSS into your React component:
+typescript
+Copy code
+import Swal from 'sweetalert2';
+import 'sweetalert2/dist/sweetalert2.css';
+2. Update resetGame Method:
+
+Modify the resetGame method to use SweetAlert (Swal.fire) for confirmation:
+typescript
+Copy code
+resetGame() {
+  Swal.fire({
+    title: 'Restart Game',
+    text: 'Are you sure you want to restart the game?',
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, restart!',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      this.setState({
+        board: Array(9).fill(null),
+        xIsNext: true,
+      });
+      Swal.fire({
+        title: 'Restarted!',
+        text: 'Your game has been restarted.',
+        icon: 'success',
+      });
+    }
+  });
+}
+3. Explanation:
+
+Confirmation Dialog (Swal.fire):
+
+Displays a dialog with title 'Restart Game', confirmation text, and icons.
+icon: 'question' for confirmation and icon: 'success' upon successful restart.
+Customizes buttons (showCancelButton, confirmButtonColor, confirmButtonText).
+Game State Update:
+
+Resets the game state (board and xIsNext) upon user confirmation.
+4. Rendering:
+
+Renders the game status, board, and a restart button (<button>) using React's render method.
+5. Additional Notes:
+
+Ensure SweetAlert CSS (sweetalert2/dist/sweetalert2.css) is imported for proper styling.
+SweetAlert offers extensive customization for dialogs, animations, and more to enhance user experience.
+
+![Screenshot 2024-06-20 165312](https://github.com/Karthiraj7/TicTac/assets/108760004/c075b583-4e0a-4028-b1f7-b40c38799c9c)
+
+![Screenshot 2024-06-20 165259](https://github.com/Karthiraj7/TicTac/assets/108760004/bf5978a6-f699-44a7-9fe3-712f7e0c8fe9)
 
 ## Used SharePoint Framework Version
 
