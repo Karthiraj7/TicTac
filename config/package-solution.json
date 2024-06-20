@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "k-arthi-client-side-solution",
+    "id": "8c0a2ccd-9bc9-42ef-afd4-9527e63f3642",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "k-arthi description"
+      },
+      "longDescription": {
+        "default": "k-arthi description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "k-arthi Feature",
+        "description": "The feature that activates elements of the k-arthi solution.",
+        "id": "8370c348-3ba2-44da-8232-899659fb3387",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/k-arthi.sppkg"
+  }
+}
